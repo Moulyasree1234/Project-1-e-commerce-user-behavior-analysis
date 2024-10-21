@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.sentimentanalysis</groupId>
-    <artifactId>Project-1-e-commerce-user-behavior-analysis</artifactId>
+    <groupId>com.ecommerce.userbehavior</groupId> <!-- Updated groupId -->
+    <artifactId>Project-1-e-commerce-userbehavior</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -54,7 +54,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.sentimentanalysis.hadoop.SentimentAnalysis</mainClass>
+                            <mainClass>com.ecommerce.userbehavior.EcommerceAnalysisJob</mainClass> <!-- Updated mainClass -->
                         </manifest>
                     </archive>
                 </configuration>
