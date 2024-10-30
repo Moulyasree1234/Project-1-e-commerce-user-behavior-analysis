@@ -46,7 +46,7 @@ public class EcommerceAnalysisJob {
         job2.setOutputValueClass(Text.class);
         
         MultipleInputs.addInputPath(job2, new Path(args[2]), TextInputFormat.class, ActivityMapper.class); // user_activity.csv
-        MultipleInputs.addInputPath(job2, new Path(args[3]), TextInputFormat.class, TransactionMapper.class); // transactions.csv
+        MultipleInputs.addInputPath(job2, new Path(args[3]), TextInputFormat.class, TransactionsMapper.class); // transactions.csv
         
         FileOutputFormat.setOutputPath(job2, new Path(args[4]));  // Output path for Task 2
 

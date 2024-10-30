@@ -1,7 +1,6 @@
 package com.ecommerce.userbehavior;
 
 
-
 import java.io.IOException;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -13,7 +12,6 @@ public class ActivityMapper extends Mapper<LongWritable, Text, Text, Text> {
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        // Split the input CSV line by comma
         String[] fields = value.toString().split(",");
 
         // Skip header or malformed rows
@@ -21,12 +19,14 @@ public class ActivityMapper extends Mapper<LongWritable, Text, Text, Text> {
             return;
         }
 
-        // Emit interactions from user_activity.csv
-        String productIDStr = fields[3];  // Assuming ProductID is the 4th column
-        String activityType = fields[2];  // ActivityType is 3rd column
+        String productIDStr = fields[3];
+        String activityType = fields[2];
 
         productID.set(productIDStr);
-        activity.set("interaction:" + activityType); // Tagging the interaction type
+        activity.set("interaction:" + activityType);
         context.write(productID, activity);
     }
 }
+
+
+
